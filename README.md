@@ -39,13 +39,13 @@ Users can add new jokes or update existing ones.
 
 # Implementation Details
 
-### ViewController.swift
+```ViewController.swift```
 - Displays jokes either from the API or from Core Data based on the selected segment.
 - **Segmented Control:** Switches between two table views.
 - **API Fetching:** Jokes are fetched from a remote API and displayed in the first table view.
 - **Core Data Operations:** Fetch, save, and delete jokes from Core Data.
   
-### FormVC.swift
+```FormVC.swift```
 - Handles the form to add or update a joke.
 - When the form is loaded, if a joke is provided, it pre-fills the form fields for updating; otherwise, it allows for adding a new joke.
 
@@ -57,15 +57,23 @@ Users can add new jokes or update existing ones.
 - **Updating Jokes:** Jokes can be updated from the second table view by swiping to edit.
 
 ### API Fetching
-- The app fetches jokes from an API using ApiCall().JokeApi. The data is parsed and displayed in the table view.
+- The app fetches jokes from an API using ```ApiCall().JokeApi```. The data is parsed and displayed in the table view.
+
+### JokeApi
+```ruby 
+https://official-joke-api.appspot.com/jokes/random/25
+```
+```ruby
+https://official-joke-api.appspot.com/jokes/programming/random
+```
 
 ## Core Data Entities
 - **Entity Name:** Jokes
-  - **Attributes:**
-    - **id:** Integer (Unique ID for the joke)
-    - **type:** String (Type of joke)
-    - **setup:** String (The joke setup)
-    - **punchline:** String (The punchline)
+  - ```Attributes:```
+    - ```id:``` Integer (Unique ID for the joke)
+    - ```type:``` String (Type of joke)
+    - ```setup:``` String (The joke setup)
+    - ```punchline:``` String (The punchline)
 
 ### JokeModel
 ```ruby
