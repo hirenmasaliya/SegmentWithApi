@@ -9,6 +9,9 @@ import UIKit
 
 class TVCell: UITableViewCell {
 
+    @IBOutlet weak var lblSetup: UILabel!
+    
+    @IBOutlet weak var lblPunchline: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
