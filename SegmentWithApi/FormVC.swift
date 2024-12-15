@@ -59,6 +59,7 @@ class FormVC: UIViewController {
             let punchline = txtPunchline.text!
             
             CoreDataSave(jokeObject: JokeModel(id: id, type: type, setup: setup, punchline: punchline))
+            
         }else{
             let id = Int32(txtId.text!)!
             let type = txtType.text!
@@ -87,6 +88,13 @@ class FormVC: UIViewController {
         do {
             try managedContext.save()
             debugPrint("Data Save Successfully")
+            
+            txtId.text = ""
+            txtType.text = ""
+            txtSetup.text = ""
+            txtPunchline.text = ""
+            navigationController?.popViewController(animated: true)
+            
         } catch let err as NSError{
             debugPrint("Could not save to CoreData .Error \(err)")
         }
@@ -120,3 +128,40 @@ class FormVC: UIViewController {
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
